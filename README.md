@@ -4,7 +4,7 @@ Script to set permissions and create alias to executable files
 
 ## Install
 
-$ `git clone --single-branch --branch ccoa https://gitlab.com/claromes/chmod-chown-opt-alias.git`
+$ `curl https://gitlab.com/claromes/chmod-chown-opt-alias/-/raw/master/ccoa.sh --output ccoa.sh`
 
 $ `sudo chmod +x ./ccoa.sh`
 
