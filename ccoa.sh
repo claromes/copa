@@ -10,6 +10,12 @@ NORMAL=$(tput sgr0)
 LIST=$(ls -l $1)
 
 VERSION="v1.0"
+ERROR="
+    Unknown option: $1
+
+    Usage: ${BOLD}./ccoa.sh [file] [alias]${NORMAL}
+    Help: ${BOLD}./$(basename $0) --help
+"
 CREDITS="
     Created by Claromes
     claromes@protonmail.ch
@@ -38,15 +44,19 @@ HELP="
 case "$1" in
     -v | --version)
                 echo "$VERSION"
-                exit
+                exit 0
     ;;
     -h | --help)
                 echo "$HELP"
-                exit
+                exit 0
     ;;
     -c | --credits)
                 echo "$CREDITS"
-                exit
+                exit 0
+    ;;
+    -* | --*)
+                echo "$ERROR"
+                exit 1
     ;;
 esac
 
@@ -54,12 +64,12 @@ esac
 sudo chmod +x $1 &&
 sudo chown -R $USER:$USER $1 &&
 echo "${CYAN}info${NORMAL} Permissions:${NORMAL} ${LIST}" &&
-#sudo mkdir /opt/$2 &&
-#sudo cp $1 /opt/$2 &&
-#echo "${CYAN}info${NORMAL} The files was copied to /opt/$2 directory" &&
-#echo "" >> ~/.bashrc &&
-#echo "# $1 - created by ccoa.sh script" >> ~/.bashrc &&
-#echo "alias $2='cd /opt/$2 && ./$1 > /dev/null 2>&1 &'" >> ~/.bashrc &&
+sudo mkdir /opt/$2 &&
+sudo cp $1 /opt/$2 &&
+echo "${CYAN}info${NORMAL} The files was copied to /opt/$2 directory" &&
+echo "" >> ~/.bashrc &&
+echo "# $1 - created by ccoa.sh script" >> ~/.bashrc &&
+echo "alias $2='cd /opt/$2 && ./$1 > /dev/null 2>&1 &'" >> ~/.bashrc &&
 
 while true; do
     read -p "${BOLD}- Delete original files?(y/n)${RESET}" yn
@@ -73,3 +83,4 @@ echo "${YELLOW}warning${NORMAL} The alias \"cd /opt/$2 && ./$1 > /dev/null 2>&1 
 echo "${GREEN}success${NORMAL} Type ${BOLD}$2${NORMAL} to open" &&
 
 exec bash
+exit 0
