@@ -31,7 +31,7 @@ $ `./ccoa.sh [info]`
 
 ## Changelog
 
-[CHANGELOG.md]()
+[CHANGELOG.md](https://gitlab.com/claromes/chmod-chown-opt-alias/-/blob/master/CHANGELOG.md)
 
 
 **This is an experimental project and may contain errors**
