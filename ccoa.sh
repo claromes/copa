@@ -20,7 +20,7 @@ HELP="
 
     Info options:
 
-        -h --help       Print option
+        -h --help       Print usage commands
         -v --version    Print CCOA version
         -c --credits    Print the maintainer name, contact, source code link and license
 "
