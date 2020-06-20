@@ -7,23 +7,7 @@ RESET=$(tput sgr0)
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 
-LIST=$(ls -l $1)
-
 VERSION="v1.0"
-ERROR="
-    Unknown option: $1
-
-    Usage: ${BOLD}./ccoa.sh [file] [alias]${NORMAL}
-    Help: ${BOLD}./$(basename $0) --help
-"
-CREDITS="
-    Created by Claromes
-    claromes@protonmail.ch
-    ${BOLD}https://twitter.com/claromes${NORMAL}
-
-    Under the MIT License
-    Source code: ${BOLD}https://gitlab.com/claromes/chmod-chown-opt-alias
-"
 HELP="
     Usage: ${BOLD}./ccoa.sh [file] [alias]${NORMAL}
 
@@ -40,6 +24,20 @@ HELP="
         -v --version    Print CCOA version
         -c --credits    Print the maintainer name, contact, source code link and license
 "
+CREDITS="
+    Created by Claromes
+    claromes@protonmail.ch
+    ${BOLD}https://twitter.com/claromes${NORMAL}
+
+    Under the MIT License
+    Source code: ${BOLD}https://gitlab.com/claromes/chmod-chown-opt-alias
+"
+ERROR="
+    Unknown option: $1
+
+    Usage: ${BOLD}./ccoa.sh [file] [alias]${NORMAL}
+    Help: ${BOLD}./$(basename $0) --help
+"
 
 case "$1" in
     -v | --version)
@@ -54,12 +52,21 @@ case "$1" in
                 echo "$CREDITS"
                 exit 0
     ;;
+    "")
+                echo "$ERROR"
+                exit 1
+    ;;
+    [0-9]*)
+                echo "$ERROR"
+                exit 1
+    ;;
     -* | --*)
                 echo "$ERROR"
                 exit 1
     ;;
 esac
 
+LIST=$(ls -l $1)
 
 sudo chmod +x $1 &&
 sudo chown -R $USER:$USER $1 &&
