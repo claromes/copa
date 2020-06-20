@@ -1,4 +1,5 @@
 # chmod-chown-opt-alias
+<img alt="ccoa v0.0.4" src="https://img.shields.io/badge/ccoa-v0.0.4-%230fd38a">
 
 Script to set permissions and create alias to executable files
 
@@ -27,5 +28,10 @@ $ `./ccoa.sh [info]`
     -v --version        Print CCOA version
 
     -c --credits        Print the maintainer name, contact, source code link and license
+
+## Changelog
+
+[CHANGELOG.md]()
+
 
 **This is an experimental project and may contain errors**
