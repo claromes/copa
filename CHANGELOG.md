@@ -26,5 +26,5 @@
   - chmod permission
   - chown permission
   - copy file to /opt
-  - create a alias in .bashrc
+  - create an alias in .bashrc
 - Development branch
