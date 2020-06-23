@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.0.5 - 2020-06-22
+
+### Added
+- Option to run process in background
+- In alias variable, command to back to current directory after run all commands
+
+### Changed
+- Explanation of alias in help text
+- README
+  - Explanation of alias option
+
 ## 0.0.4 - 2020-06-20
 
 ### Added

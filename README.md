@@ -1,5 +1,5 @@
 # chmod-chown-opt-alias
-<img alt="ccoa v0.0.4" src="https://img.shields.io/badge/ccoa-v0.0.4-%230fd38a">
+<img alt="ccoa v0.0.5" src="https://img.shields.io/badge/ccoa-v0.0.5-%230fd38a">
 
 Script to set permissions and create alias to executable files
 
@@ -15,9 +15,7 @@ $ `./ccoa.sh [file] [alias]`
 
     file:               File to change permissions and to set an alias
 
-    alias:              Unique word without spaces. Choose a short word
-
-
+    alias:              Unique word
 
 $ `./ccoa.sh [info]`
 

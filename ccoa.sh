@@ -12,7 +12,7 @@ HELP="
     Usage: ${BOLD}./ccoa.sh [file] [alias]${NORMAL}
 
     file:               File to change permissions and to set an alias
-    alias:              Unique word without spaces. Choose a short word
+    alias:              Unique word
 
 
 
@@ -74,9 +74,16 @@ echo "${CYAN}info${NORMAL} Permissions:${NORMAL} ${LIST}" &&
 sudo mkdir /opt/$2 &&
 sudo cp $1 /opt/$2 &&
 echo "${CYAN}info${NORMAL} The files was copied to /opt/$2 directory" &&
+
 echo "" >> ~/.bashrc &&
 echo "# $1 - created by ccoa.sh script" >> ~/.bashrc &&
-echo "alias $2='cd /opt/$2 && ./$1 > /dev/null 2>&1 &'" >> ~/.bashrc &&
+while true; do
+    read -p "${BOLD}- Run process in the background?(y/n)${RESET}" yn
+    case $yn in
+        [Yy]* ) echo "alias $2='cd /opt/$2 && ./$1 > /dev/null 2>&1 & cd -'" >> ~/.bashrc; break;;
+        [Nn]* ) echo "alias $2='cd /opt/$2 && ./$1 && cd -'" >> ~/.bashrc; break;;
+    esac
+done &&
 
 while true; do
     read -p "${BOLD}- Delete original files?(y/n)${RESET}" yn
@@ -86,8 +93,7 @@ while true; do
     esac
 done &&
 
-echo "${YELLOW}warning${NORMAL} The alias \"cd /opt/$2 && ./$1 > /dev/null 2>&1 &\" was created in your .bashrc file" &&
+echo "${YELLOW}warning${NORMAL} The alias ${BOLD}$2${NORMAL} was created in your .bashrc file" &&
 echo "${GREEN}success${NORMAL} Type ${BOLD}$2${NORMAL} to open" &&
 
 exec bash
-exit 0
