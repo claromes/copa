@@ -1,35 +1,35 @@
-# chmod-chown-opt-alias
-<img alt="ccoa v0.0.5" src="https://img.shields.io/badge/ccoa-v0.0.5-%230fd38a">
+# copa
+<img alt="copa v0.0.5" src="https://img.shields.io/badge/copa-v0.0.5-%230fd38a">
 
-Script to set permissions and create alias to executable files
+Script to change permissions, copy files and directories and create an alias
 
 ## Install
 
-$ `curl https://gitlab.com/claromes/chmod-chown-opt-alias/-/raw/master/ccoa.sh --output ccoa.sh`
+$ `curl https://gitlab.com/claromes/copa/-/raw/master/copa.sh --output copa.sh`
 
-$ `sudo chmod +x ./ccoa.sh`
+$ `sudo chmod +x ./copa.sh`
 
 ## Usage
 
-$ `./ccoa.sh [file] [alias]`
+$ `./copa.sh [file] [alias]`
 
     file:               File to change permissions and to set an alias
 
     alias:              Unique word
 
-$ `./ccoa.sh [info]`
+$ `./copa.sh [info]`
 
     Info options:
 
     -h --help           Print usage commands
 
-    -v --version        Print CCOA version
+    -v --version        Print copa version
 
     -c --credits        Print the maintainer name, contact, source code link and license
 
 ## Changelog
 
-[CHANGELOG.md](https://gitlab.com/claromes/chmod-chown-opt-alias/-/blob/master/CHANGELOG.md)
+[CHANGELOG.md](https://gitlab.com/claromes/copa/-/blob/master/CHANGELOG.md)
 
 
 **This is an experimental project and may contain errors**

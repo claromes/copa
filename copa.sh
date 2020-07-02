@@ -9,19 +9,19 @@ NORMAL=$(tput sgr0)
 
 VERSION="v1.0"
 HELP="
-    Usage: ${BOLD}./ccoa.sh [file] [alias]${NORMAL}
+    Usage: ${BOLD}./copa.sh [file] [alias]${NORMAL}
 
     file:               File to change permissions and to set an alias
     alias:              Unique word
 
 
 
-    Info: ${BOLD}./ccoa.sh [info]${NORMAL}
+    Info: ${BOLD}./copa.sh [info]${NORMAL}
 
     Info options:
 
         -h --help       Print usage commands
-        -v --version    Print CCOA version
+        -v --version    Print copa version
         -c --credits    Print the maintainer name, contact, source code link and license
 "
 CREDITS="
@@ -35,7 +35,7 @@ CREDITS="
 ERROR="
     Unknown option: $1
 
-    Usage: ${BOLD}./ccoa.sh [file] [alias]${NORMAL}
+    Usage: ${BOLD}./copa.sh [file] [alias]${NORMAL}
     Help: ${BOLD}./$(basename $0) --help
 "
 
@@ -76,7 +76,7 @@ sudo cp $1 /opt/$2 &&
 echo "${CYAN}info${NORMAL} The files was copied to /opt/$2 directory" &&
 
 echo "" >> ~/.bashrc &&
-echo "# $1 - created by ccoa.sh script" >> ~/.bashrc &&
+echo "# $1 - created by copa.sh script" >> ~/.bashrc &&
 while true; do
     read -p "${BOLD}- Run process in the background?(y/n)${RESET}" yn
     case $yn in
