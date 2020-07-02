@@ -39,6 +39,13 @@ ERROR="
     Help: ${BOLD}./$(basename $0) --help
 "
 
+ERROR_2="
+    Missing required alias
+
+    Usage: ${BOLD}./copa.sh [file] [alias]${NORMAL}
+    Help: ${BOLD}./$(basename $0) --help
+"
+
 case "$1" in
     -v | --version)
                 echo "$VERSION"
@@ -62,6 +69,13 @@ case "$1" in
     ;;
     -* | --*)
                 echo "$ERROR"
+                exit 1
+    ;;
+esac
+
+case "$2" in
+    "")
+                echo "$ERROR_2"
                 exit 1
     ;;
 esac

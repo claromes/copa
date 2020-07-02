@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.6 - 2020-07-01
+
+### Added
+- Treat error when the alias is missing
+
+### Changed
+- Script name
+- Development branch deleted
+
 ## 0.0.5 - 2020-06-22
 
 ### Added
