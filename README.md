@@ -1,5 +1,5 @@
 # copa
-<img alt="copa v0.0.5" src="https://img.shields.io/badge/copa-v0.0.5-%230fd38a">
+<img alt="copa v0.0.6" src="https://img.shields.io/badge/copa-v0.0.6-%230fd38a">
 
 Script to change permissions, copy files and directories and create an alias
 
