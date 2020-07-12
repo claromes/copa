@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.6.1 - 2020-07-12
+
+### Changed
+- Fix version
+
 ## 0.0.6 - 2020-07-01
 
 ### Added

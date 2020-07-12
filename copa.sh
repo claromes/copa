@@ -7,7 +7,7 @@ RESET=$(tput sgr0)
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 
-VERSION="v1.0"
+VERSION="v0.0.6.1"
 HELP="
     Usage: ${BOLD}./copa.sh [file] [alias]${NORMAL}
 
